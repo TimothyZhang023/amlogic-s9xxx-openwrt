@@ -9,7 +9,7 @@
 #======================================================================================================================
 
 #===== Do not modify the following parameter settings, Start =====
-build_openwrt=("s922x" "s905x3" "s905x2" "s912" "s905d" "s905x" "s905w")
+build_openwrt=("s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905x" "s905w")
 make_path=${PWD}
 tmp_path=${make_path}/tmp
 out_path=${make_path}/out
@@ -134,6 +134,13 @@ refactor_files() {
             FDTFILE="meson-g12b-gtking-pro.dtb"
             UBOOT_OVERLOAD="u-boot-gtkingpro.bin"
             MAINLINE_UBOOT="/lib/u-boot/gtkingpro-u-boot.bin.sd.bin"
+            ANDROID_UBOOT=""
+            AMLOGIC_SOC="s922x"
+            ;;
+        s922x-n2 | odroid-n2)
+            FDTFILE="meson-g12b-gtking-pro-rev_a.dtb"
+            UBOOT_OVERLOAD="u-boot-odroid-n2.bin"
+            MAINLINE_UBOOT="/lib/u-boot/odroid-n2-u-boot.bin.sd.bin"
             ANDROID_UBOOT=""
             AMLOGIC_SOC="s922x"
             ;;
